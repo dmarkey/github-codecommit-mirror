@@ -65,7 +65,7 @@ class CodeCommit(object):
     def _push_to_mirror(self, repo_dir, name):
         logger.info("\t* Mirror local bare clone {}".format(name))
         g = Repo(repo_dir).git
-        resp = g.push("--mirror",  "https://{user}:{pwd}@git-codecommit.eu-central-1.amazonaws.com/v1/repos/{name}".format(
-                    user=self.user, pwd=self.password, name=name
+        resp = g.push("--mirror",  "https://{user}:{pwd}@git-codecommit.{region}.amazonaws.com/v1/repos/{name}".format(
+                    user=self.user, pwd=self.password, name=name, region=self.client.meta.region_name
         ))
 
