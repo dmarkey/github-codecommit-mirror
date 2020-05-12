@@ -37,7 +37,7 @@ setup(name='github-codecommit-mirror',
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "GitPython==2.1.5",
+        "GitPython==3.1.2",
         "boto3==1.4.6",
         "requests==2.18.4",
     ],
