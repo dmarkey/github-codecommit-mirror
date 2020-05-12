@@ -54,7 +54,7 @@ class Github(object):
 
     def _get_query(self):
         return """query {organization(login:"%s") {repositories(
-                    last:100, isFork: false,
+                    first:100, isFork: false,
                     orderBy: { field: PUSHED_AT, direction: DESC }
                 ) {edges {node { name, description, pushedAt}}}}}""" % (self.org)
 
